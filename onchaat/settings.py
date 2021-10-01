@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # additionals
+    'channels',
+    'chaat'
 ]
 
 MIDDLEWARE = [
@@ -50,11 +53,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'onchaat.urls'
+ASGI_APPLICATION = "routing.application"
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'onchaat.wsgi.application'
+ASGI_APPLICATION = "onchaat.asgi.application"
 
 
 # Database
